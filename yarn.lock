@@ -1028,6 +1028,11 @@ combined-stream@^1.0.8:
   dependencies:
     delayed-stream "~1.0.0"
 
+common-js@^0.3.8:
+  version "0.3.8"
+  resolved "https://registry.yarnpkg.com/common-js/-/common-js-0.3.8.tgz#f4328918b4ba376f981ad33a1b1fbb6614126ecb"
+  integrity sha512-83poCK3wlRnYqWdolJiYrMYvaBFzlDO1RwQVti2ZDBR2K5ifBGksu2cw3ZKFioEqB8FVLUmuu3OXxFUlSBk5UQ==
+
 concat-map@0.0.1:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/concat-map/-/concat-map-0.0.1.tgz#d8a96bd77fd68df7793a73036a3ba0d5405d477b"
