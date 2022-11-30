@@ -5,7 +5,7 @@ import express from "express";
 
 dotenv.config({ path: __dirname + "/.env" });
 
-const app = express();
+const app: express.Application = express();
 connectToDB();
 
 app.use(express.json());

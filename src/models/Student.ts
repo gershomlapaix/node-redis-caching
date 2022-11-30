@@ -4,7 +4,7 @@ import { IStd } from "../interfaces/StudentInterface";
 const studentSchema: Schema = new Schema({
   firstName: String,
   lastName: String,
-  class: String,
+  theClass: String,
   age: Number,
 });
 
