@@ -1,4 +1,5 @@
 import { Request, Response, NextFunction } from "express";
+import mongoose from "mongoose";
 import Student from "./../models/Student";
 
 const createStudent = async (
@@ -28,4 +29,20 @@ const getAllStudents = async (
   res.json({ students, count: `${students.length} students` }).status(200);
 };
 
-export { getAllStudents,createStudent };
+const getOneStudent = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
+  const id = req.params.id;
+
+  const student = await Student.findById({ _id: mongoose.Types.ObjectId(id)});
+
+  if (!student) {
+   throw new Error(`Student with id ${id} is not found`)
+  } else {
+    res.json(student).status(200);
+  }
+};
+
+export { getAllStudents, createStudent, getOneStudent };
