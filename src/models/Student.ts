@@ -1,3 +1,12 @@
-import mongoose from 'mongoose'
+import mongoose, { Schema } from "mongoose";
 
-const 
+const studentSchema:Schema = new mongoose.Schema({
+  firstName: String,
+  lastName: String,
+  class: String,
+  age: Number,
+});
+
+const Student = mongoose.model("student", studentSchema);
+
+module.exports = Student;

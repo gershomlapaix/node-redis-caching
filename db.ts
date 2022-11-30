@@ -7,11 +7,13 @@ function connectToDB() {
       useUnifiedTopology: true,
       autoIndex: true,
     } as ConnectOptions)
-    .then((db) => {
+    .then((db: any) => {
       console.log("Database Connected Successfuly.");
     })
-    .catch((err) => {
-      console.log("Error Connectiong to the Database");
+    .catch((err: any) => {
+      console.log(err.message);
+      
+      console.log("Error Connectiong to the Database", err);
     });
 }
 

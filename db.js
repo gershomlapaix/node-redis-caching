@@ -16,7 +16,8 @@ function connectToDB() {
         console.log("Database Connected Successfuly.");
     })
         .catch((err) => {
-        console.log("Error Connectiong to the Database");
+        console.log(err.message);
+        console.log("Error Connectiong to the Database", err);
     });
 }
 exports.connectToDB = connectToDB;
