@@ -4,10 +4,11 @@ import {
   createStudent,
   getOneStudent,
 } from "../controllers/StudentController";
+import { cache } from "../middlewares/cache";
 
 const router: Router = express.Router();
 
-router.route("/").get(getAllStudents).post(createStudent);
-router.route("/:id").get(getOneStudent);
+router.route("/").get(cache,getAllStudents).post(createStudent);
+router.route("/:id").get(cache,getOneStudent);
 
 export = router;

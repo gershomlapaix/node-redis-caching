@@ -1,0 +1,11 @@
+config:
+  target: "http://localhost:4000"
+  phases:
+    - duration: 60,
+      arrivalRate: 10
+
+scenarios:
+  - name: "Testing redis work"
+    flow:
+      - get:
+          url: "/api/v1/student/6387a0ae4ddc5ffc55c03ffc"

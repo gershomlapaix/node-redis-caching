@@ -1,6 +1,9 @@
 import { Request, Response, NextFunction } from "express";
+import Redis from 'ioredis'
 import mongoose from "mongoose";
 import Student from "./../models/Student";
+
+const redis = new Redis()
 
 const createStudent = async (
   req: Request,
@@ -41,6 +44,7 @@ const getOneStudent = async (
   if (!student) {
    throw new Error(`Student with id ${id} is not found`)
   } else {
+    redis.set(id, JSON.stringify(student),"ex",15)
     res.json(student).status(200);
   }
 };
